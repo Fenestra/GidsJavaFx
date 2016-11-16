@@ -1,0 +1,8 @@
+dist
+/.idea
+/*.iml
+/out
+/.idea_modules
+/.classpath
+*.~*
+/*.xml
