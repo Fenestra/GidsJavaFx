@@ -4,25 +4,14 @@ version := "1.0"
 
 scalaVersion := "2.12.2"
 
-mainClass in (Compile, run) := Some("GidsMain")
+assemblyJarName in assembly := "GidsJavaFx.jar"
 
-jfxSettings
+mainClass in (Compile, run) := Some("main.GidsMain")
 
-JFX.mainClass := Some("GidsMain")
+// Add dependency on ScalaFX library
+libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.102-R11"
 
-JFX.j2se := Some("1.8+")
+scalacOptions ++= Seq("-unchecked", "-deprecation", "-Xcheckinit", "-encoding", "utf8", "-feature")
 
-JFX.vendor := "Westat"
-
-JFX.description := "Prototype of GIDS functionality for the web."
-
-JFX.elevated := true
-
-JFX.keyStore := Some(new File("FenestraCertificate.p12"))
-
-JFX.storePass := Some("lisa1535")
-
-JFX.alias := Some("fenestra")
-
-JFX.keyPass := Some("lisa1535")
-
+// Fork a new JVM for 'run' and 'test:run', to avoid JavaFX double initialization problems
+fork := true

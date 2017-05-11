@@ -1,6 +1,7 @@
 package com.westat
 
-import javafx.scene.control.TreeItem
+import scalafx.collections.ObservableBuffer
+import scalafx.scene.control.TreeItem
 //import play.api.libs.json.Json
 import scala.collection.mutable.ListBuffer
 
@@ -376,6 +377,7 @@ object CustomContent {
     cc.children.foreach(ch => {
       item.getChildren.add( new TreeItem(ch) )
     })
+    item.expanded = true
     root.getChildren.add(item)
   }
 /*

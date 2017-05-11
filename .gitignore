@@ -6,3 +6,6 @@ dist
 /.classpath
 *.~*
 /*.xml
+project/target
+project/project
+target
